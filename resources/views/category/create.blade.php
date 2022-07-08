@@ -4,13 +4,24 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Manage Food Category</div>
+            <form action="/category" method="post">
+                @csrf
+                <div class="card">
+                    <div class="card-header">
+                        Manage Food Category
+                    </div>
 
-                <div class="card-body">
-                    Category
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary mt-3">Submit</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
