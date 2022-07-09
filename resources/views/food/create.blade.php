@@ -30,7 +30,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
-                            <input type="text" name="description" class="form-control @error('description') is-invalid @enderror">
+                            <textarea name="description" class="form-control @error('description') is-invalid @enderror"></textarea>
 
                             @error('description')
                             <span class="invalid-feedback" role="alert">
@@ -54,7 +54,6 @@
                                 <option disabled selected value="">Choose...</option>
                                 @foreach (App\Models\Category::all() as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
-
                                 @endforeach
                             </select>
                             

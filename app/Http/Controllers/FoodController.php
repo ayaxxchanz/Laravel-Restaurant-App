@@ -52,7 +52,7 @@ class FoodController extends Controller
             'name' => $request->get('name'),
             'description' => $request->get('description'),
             'price' => $request->get('price'),
-            'category' => $request->get('category'),
+            'category_id' => $request->get('category'),
             'image' => $name
         ]);
 
