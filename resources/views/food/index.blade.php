@@ -22,7 +22,7 @@
                             <th scope="col">Image</th>
                             <th scope="col">Name</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Price (RM)</th>
                             <th scope="col">Category</th>
                             <th scope="col">Action</th>
                             </tr>
@@ -82,6 +82,8 @@
                             @endif
                         </tbody>
                     </table>
+
+                    {{ $foods->links() }}
                 </div>
             </div>
         </div>
