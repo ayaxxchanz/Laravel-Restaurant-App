@@ -80,7 +80,8 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $food = Food::findOrFail($id);
+        return view('food.edit', compact('food'));
     }
 
     /**
