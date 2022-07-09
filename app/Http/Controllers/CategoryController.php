@@ -14,8 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-        return "index";
+        $categories = Category::latest()->get();
+
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -25,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category/create');
+        return view('category.create');
     }
 
     /**
@@ -62,7 +63,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('category.edit', compact('category'));
     }
 
     /**
@@ -74,7 +76,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->name = $request->get('name');
+        $category->save();
+
+        return redirect()->route('category.index')->with('message', 'Category updated.');
     }
 
     /**
