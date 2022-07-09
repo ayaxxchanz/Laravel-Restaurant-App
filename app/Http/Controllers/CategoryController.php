@@ -36,7 +36,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        Category::create([
+            'name' => $request->get('name'),
+        ]);
+
+        return redirect()->back()->with('message', 'Category created.');
     }
 
     /**
