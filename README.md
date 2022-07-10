@@ -45,7 +45,5 @@ Via .zip package:
 -   Extract file to desktop
 -   Open phpMyAdmin and create a new database named `laravel_practice`
 -   Import `database.sql` into the database
--   Run `composer install` (in project directory)
 -   Run `php artisan key:generate` (in project directory)
--   Run `php artisan migrate` (in project directory)
 -   Run `php artisan serve` (in project directory)
