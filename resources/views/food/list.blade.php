@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="text-center container-fluid pb-5">
+    <img src="/images/logo.png" width="100%">
+</div>
+<div class="container p-2">
     @foreach ($categories as $category)
-    <div class="row bg-danger mb-4" style="border-radius:10px;box-shadow: 0px 0px 10px 5px #bfbfbf;">
-        <div class="bg-dark p-1" style="border-radius:10px 10px 0 0">
+    <div class="row bg-danger mb-4">
+        <div class="bg-dark p-1">
             <h1 class="text-warning px-4 pt-2 text-uppercase">{{ $category->name }}</h1>
         </div>
         @foreach (App\Models\Food::where('category_id', $category->id)->get() as $food)

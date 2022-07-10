@@ -3,19 +3,20 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <form action="{{ route('category.update', [$category->id]) }}"  method="post">
+        <div class="col-md-4">
+            <form action="{{ route('category.update', [$category->id]) }}" method="post">
                 @csrf
                 {{ method_field('PUT') }}
-                <div class="card">
+                <div class="card text-center">
                     <div class="card-header">
-                        Update Food Category
+                        <h5 class="fw-bold">Edit Category</h5>
                     </div>
 
                     <div class="card-body">
-                        <div class="form-group">
+                        <div class="mb-3">
                             <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $category->name }}">
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                value="{{ $category->name }}">
 
                             @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -23,8 +24,8 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary mt-3">Update</button>
+                        <div class="mb-3 d-grid gap-2">
+                            <button class="btn btn-dark">Submit</button>
                         </div>
                     </div>
                 </div>
