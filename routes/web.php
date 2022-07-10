@@ -27,3 +27,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('category', App\Http\Controllers\CategoryController::class)->middleware('auth');
 Route::resource('food', App\Http\Controllers\FoodController::class)->middleware('auth');
+Route::get('/', [App\Http\Controllers\FoodController::class, 'listFood']);
