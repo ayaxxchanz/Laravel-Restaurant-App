@@ -48,23 +48,34 @@
                         @if(Auth::check())
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('category.index') }}"
-                                role="button" data-bs-hover="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                v-pre>
                                 {{ __('Category') }}
                             </a>
 
+
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('category.index') }}">
+                                    {{ __('All Category') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('category.create') }}">
                                     {{ __('Add New') }}
                                 </a>
                             </div>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('food.index') }}"
-                                role="button" data-bs-hover="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                v-pre>
                                 {{ __('Food') }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('food.index') }}">
+                                    {{ __('All Food') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('food.create') }}">
                                     {{ __('Add New') }}
                                 </a>
