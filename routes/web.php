@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +25,5 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('category', App\Http\Controllers\CategoryController::class);
-Route::resource('food', App\Http\Controllers\FoodController::class);
+Route::resource('category', App\Http\Controllers\CategoryController::class)->middleware('auth');
+Route::resource('food', App\Http\Controllers\FoodController::class)->middleware('auth');
