@@ -11,8 +11,14 @@
             @endif
 
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between align-items-baseline">
                     All Category
+
+                    <a href="{{ route('category.create') }}">
+                        <button class="btn btn-outline-dark">
+                            Add New
+                        </button>
+                    </a>
                 </div>
 
                 <div class="card-body">
