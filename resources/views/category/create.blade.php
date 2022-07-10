@@ -18,8 +18,8 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="form-group">
-                            <label for="name">Name</label>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
 
                             @error('name')
@@ -28,8 +28,8 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <button class="btn btn-outline-primary mt-3">Submit</button>
+                        <div class="mb-3">
+                            <button class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
