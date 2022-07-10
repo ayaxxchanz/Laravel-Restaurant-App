@@ -4,7 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form action="{{ route('food.update', [$food->id]) }}"  method="post">
+            <form action="{{ route('food.update', [$food->id]) }}" enctype="multipart/form-data"
+  method="post">
                 @csrf
                 {{ method_field('PUT') }}
                 <div class="card">
