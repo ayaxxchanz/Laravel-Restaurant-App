@@ -42,6 +42,7 @@ Via git:
 
 Via .zip package:
 
+-   Download [RestaurantApp.zip](https://github.com/ayaxxchanz/Laravel-Restaurant-App/releases/download/v1.0/RestaurantApp.zip)
 -   Extract file to desktop
 -   Open phpMyAdmin and create a new database named `laravel_practice`
 -   Import `database.sql` into the database
