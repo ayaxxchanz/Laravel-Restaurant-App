@@ -25,6 +25,8 @@ Auth::routes(['register'=>false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/food/{id}', [App\Http\Controllers\FoodController::class, 'view'])->name('view');
+
 Route::resource('category', App\Http\Controllers\CategoryController::class)->middleware('auth');
 Route::resource('food', App\Http\Controllers\FoodController::class)->middleware('auth');
 Route::get('/', [App\Http\Controllers\FoodController::class, 'listFood']);

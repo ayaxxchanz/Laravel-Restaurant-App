@@ -39,18 +39,18 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'=>'required',
-            'description'=>'required',
-            'price'=>'required|integer',
-            'category'=>'required',
-            'image'=>'required|image|mimes:jpg,jpeg,png'
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required|integer',
+            'category' => 'required',
+            'image' => 'required|image|mimes:jpg,jpeg,png'
         ]);
 
         $image = $request->file('image');
         $name = time() . '.' . $image->getClientOriginalExtension();
         $destinationPath = public_path('/images');
-        $image->move($destinationPath,$name);
-        
+        $image->move($destinationPath, $name);
+
         Food::create([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
@@ -95,24 +95,24 @@ class FoodController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name'=>'required',
-            'description'=>'required',
-            'price'=>'required|integer',
-            'category'=>'required',
-            'image'=>'nullable|image|mimes:jpg,jpeg,png'
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required|integer',
+            'category' => 'required',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png'
         ]);
 
         $food = Food::findOrFail($id);
         $name = $food->image;
 
         // If an image is selected in the form in edit.blade.php
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = time() . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/images');
-            $image->move($destinationPath,$name);
+            $image->move($destinationPath, $name);
         }
-        
+
         $food->name = $request->get('name');
         $food->description = $request->get('description');
         $food->price = $request->get('price');
@@ -145,8 +145,15 @@ class FoodController extends Controller
         return redirect()->route('food.index')->with('message', 'Food deleted.');
     }
 
-    public function listFood(){
+    public function listFood()
+    {
         $categories = Category::with('food')->get();
         return view('food.list', compact('categories'));
+    }
+
+    public function view($id)
+    {
+        $food = Food::findOrFail($id);
+        return view('food.detail', compact('food'));
     }
 }
