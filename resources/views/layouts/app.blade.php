@@ -48,8 +48,7 @@
                         @if(Auth::check())
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('category.index') }}"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                v-pre>
+                                role="button" data-bs-hover="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ __('Category') }}
                             </a>
 
@@ -61,8 +60,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('food.index') }}"
-                                role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                v-pre>
+                                role="button" data-bs-hover="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ __('Food') }}
                             </a>
 
