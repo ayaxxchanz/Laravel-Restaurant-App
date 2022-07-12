@@ -4,6 +4,7 @@ A simple app to display the menu of a restaurant. Consisted of backend and front
 
 -   Laravel v8.83.18
 -   Bootstrap 5
+-   MySQL
 
 ## Demo
 
