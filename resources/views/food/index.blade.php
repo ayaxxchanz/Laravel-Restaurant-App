@@ -91,7 +91,7 @@
 
                         @else
 
-                        <td colspan="6" style="text-align:center;">No category to display.</td>
+                        <td colspan="6" style="text-align:center;">No food to display.</td>
 
                         @endif
                     </tbody>
